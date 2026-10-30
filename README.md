@@ -54,7 +54,7 @@ A arquitetura do projeto foi pensada para aplicar os fundamentos de Engenharia d
 "O **PEÇONHA+** é uma solução voltada à prevenção de acidentes com animais peçonhentos e orientação ágil em saúde pública no Brasil. Seu diferencial é integrar em um Web App intuitivo a busca por unidades de atendimento de saúde, orientações oficiais de primeiros socorros e catálogo de espécies, focando integralmente na meta do ODS 3 de promover o bem-estar e salvar vidas em momentos de vulnerabilidade."
 
 ## 👥 6. Integrantes do Grupo
-* Eduardo Prado da Silva
+* Eduardo Prado da Silva (https://github.com/PRADOZZZ)
 * Daniel dos Santos Bonilho Passiani (https://github.com/danielpassiani)
 * Augusto Andrade Silva (https://github.com/augustoandradesilva7-art)
 * Letícia Souza Pessoa
