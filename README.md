@@ -40,12 +40,14 @@ A arquitetura do projeto foi pensada para aplicar os fundamentos de Engenharia d
 
 ## 🎨 4. Identidade Visual Inicial
 
-* **Logo**: Disponibilizado na pasta `docs/identidade-visual/` deste repositório.
+![Guia de Identidade Visual - PEÇONHA+](docs/identidade-visual/identidade-visual.png)
+
+* **Logo**: Composição em vetor que integra um escudo de proteção/saúde com a silhueta da fauna peçonhenta e a cruz médica.
 * **Paleta de Cores**:
-  * **Verde Preservação**: Conexão com o meio ambiente e biologia das espécies.
-  * **Amarelo / Laranja Alerta**: Sinalização de atenção, prevenção e urgência médica.
-  * **Cinza / Branco Neutro**: Fundo de alta legibilidade para leitura de conteúdos de saúde pública.
-* **Tipografia**: Fontes do tipo Sans-serif (ex.: Inter / Roboto) voltadas à boa usabilidade e leitura em telas.
+  * **Verde Preservação** (`#15803D`): Conexão com o meio ambiente e biologia das espécies.
+  * **Amarelo / Laranja Alerta** (`#F59E0B`): Sinalização de atenção, prevenção e urgência médica.
+  * **Cinza / Branco Neutro** (`#F8FAFC`): Fundo de alta legibilidade para leitura de conteúdos de saúde pública.
+* **Tipografia**: **Montserrat** para títulos (moderna e impactante) e **Inter** para textos (alta legibilidade em dispositivos móveis).
 
 ## ⚡ 5. Pitch Inicial
 
