@@ -56,7 +56,7 @@ A arquitetura do projeto foi pensada para aplicar os fundamentos de Engenharia d
 ## 👥 6. Integrantes do Grupo
 * Eduardo Prado da Silva
 * Daniel dos Santos Bonilho Passiani (https://github.com/danielpassiani)
-* Augusto Andrade Silva
+* Augusto Andrade Silva (https://github.com/augustoandradesilva7-art)
 * Letícia Souza Pessoa
 * Pedro de Siqueira Torres
 
