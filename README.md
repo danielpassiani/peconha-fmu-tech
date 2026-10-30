@@ -40,7 +40,7 @@ A arquitetura do projeto foi pensada para aplicar os fundamentos de Engenharia d
 
 ## 🎨 4. Identidade Visual Inicial
 
-![Guia de Identidade Visual - PEÇONHA+](docs/identidade-visual/identidade-visual.png)
+![Guia de Identidade Visual - PEÇONHA+](docs/identidade-visual/Identidade%20visual.png)
 
 * **Logo**: Composição em vetor que integra um escudo de proteção/saúde com a silhueta da fauna peçonhenta e a cruz médica.
 * **Paleta de Cores**:
