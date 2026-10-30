@@ -57,7 +57,7 @@ A arquitetura do projeto foi pensada para aplicar os fundamentos de Engenharia d
 * Eduardo Prado da Silva (https://github.com/PRADOZZZ)
 * Daniel dos Santos Bonilho Passiani (https://github.com/danielpassiani)
 * Augusto Andrade Silva (https://github.com/augustoandradesilva7-art)
-* Letícia Souza Pessoa
+* Letícia Souza Pessoa (https://github.com/leticialele12384-png) 
 * Pedro de Siqueira Torres (https://github.com/PedroTorres15)
 
 *Projeto submetido para a avaliação do Checkpoint 1 — FMU Tech Inovação.*
