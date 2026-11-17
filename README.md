@@ -84,7 +84,7 @@ python run.py
 Acesse **http://localhost:5000** no navegador. Para testar no celular, use o IP do computador na mesma rede Wi-Fi (ex.: `http://192.168.0.10:5000`).
 
 **Atalho no Windows:** dê dois cliques em `iniciar.bat` (cria o ambiente, instala tudo e abre o navegador).
-**No VS Code:** abra a pasta, instale as extensões recomendadas e aperte **F5** para rodar com o depurador.
+**No VS Code:** com a extensão Python instalada, abra `run.py` e aperte **F5** para rodar com o depurador.
 
 **Recriar o banco do zero:** `python -m app.seed`
 **Rodar os testes automatizados:** `python -m pytest`
