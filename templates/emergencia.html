@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block titulo %}Emergência{% endblock %}
+{% block conteudo %}
+<section class="secao">
+  <div class="container estreito">
+    <div class="ligar-192">
+      <div><strong>Caso grave? Ligue agora.</strong><br><small>Falta de ar, desmaio, sangramento ou criança picada por escorpião.</small></div>
+      <a href="tel:192" class="btn">📞 Ligar 192</a>
+    </div>
+
+    <div class="passo-rotulo">Passo 1 de 2</div>
+    <h1>Qual animal causou o acidente?</h1>
+    <p class="muted">Escolha a opção mais próxima. Se não viu o animal, toque em "Não sei".</p>
+
+    <div class="opcoes">
+      {% for codigo, g in grupos.items() %}
+      <a class="opcao" href="/emergencia/{{ codigo }}">
+        <span class="opcao-emoji">{{ g.emoji }}</span>
+        <span class="opcao-nome">{{ g.nome }}</span>
+        <span class="opcao-desc">{{ g.descricao }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -12,5 +12,5 @@ pip install -q -r requirements.txt
 echo.
 echo Abrindo http://localhost:5000  (Ctrl+C para parar)
 start "" http://localhost:5000
-python run.py
+python app.py
 pause

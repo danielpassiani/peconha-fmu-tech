@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block titulo %}Mapa de soros{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+{% endblock %}
+{% block conteudo %}
+<section class="secao">
+  <div class="container">
+    <div class="secao-titulo">
+      <h1>Mapa de soros antiveneno</h1>
+      <p>Unidades de referência do Ministério da Saúde no estado de São Paulo.</p>
+    </div>
+
+    <!-- Filtros (formulário GET: o Flask filtra e devolve a página) -->
+    <form class="filtros-form" method="get" action="/mapa">
+      <div class="campo">
+        <label for="soro">Tipo de soro</label>
+        <select id="soro" name="soro">
+          <option value="">Todos</option>
+          {% for codigo, s in soros.items() %}
+          <option value="{{ codigo }}" {{ 'selected' if codigo == soro_escolhido }}>{{ s.nome }} ({{ s.animal }})</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="campo">
+        <label for="cidade">Cidade</label>
+        <input id="cidade" name="cidade" value="{{ cidade }}" placeholder="Ex.: Campinas">
+      </div>
+      <button class="btn btn-verde" type="submit">Filtrar</button>
+      {% if soro_escolhido or cidade %}<a class="btn btn-texto" href="/mapa">Limpar</a>{% endif %}
+    </form>
+
+    <div id="mapa" class="mapa"></div>
+    <p class="legenda">{{ unidades | length }} unidades encontradas · posição aproximada (centro do município ou bairro)</p>
+
+    <h2 class="titulo-lista">Lista de unidades</h2>
+    <div class="lista-unidades">
+      {% for u in unidades %}
+      <article class="card-unidade">
+        <div>
+          <h3>{{ u.nome }}</h3>
+          <p class="muted">{{ u.endereco }} · {{ u.municipio }}</p>
+        </div>
+        <div class="badges">
+          {% for s in u.soros %}
+          <span class="badge {{ 'badge-destaque' if s == soro_escolhido }}">{{ soros[s].nome }}</span>
+          {% endfor %}
+        </div>
+        {% if u.telefone %}
+        <div class="card-unidade-acoes">
+          <a class="btn btn-verde btn-sm" href="tel:{{ u.telefone.split('/')[0] }}">📞 {{ u.telefone.split('/')[0] }}</a>
+        </div>
+        {% endif %}
+      </article>
+      {% else %}
+      <p class="muted">Nenhuma unidade encontrada com esses filtros.</p>
+      {% endfor %}
+    </div>
+    <p class="aviso">Ligue antes para confirmar se o soro está disponível.</p>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  // Unidades enviadas pelo Flask
+  const unidades = {{ unidades | tojson }};
+
+  const mapa = L.map("mapa").setView([-22.3, -48.5], 7);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap",
+  }).addTo(mapa);
+
+  const pontos = [];
+  for (const u of unidades) {
+    // verde: unidade com 7 ou mais soros / laranja: soros específicos
+    const cor = u.soros.length >= 7 ? "#15803D" : "#F59E0B";
+    L.circleMarker([u.latitude, u.longitude], { radius: 8, color: "#fff", weight: 2, fillColor: cor, fillOpacity: 1 })
+      .addTo(mapa)
+      .bindPopup("<strong>" + u.nome + "</strong><br>" + u.municipio + "<br>" + (u.telefone || ""));
+    pontos.push([u.latitude, u.longitude]);
+  }
+  if (pontos.length > 0 && pontos.length < 20) {
+    mapa.fitBounds(pontos, { padding: [40, 40], maxZoom: 12 });
+  }
+</script>
+{% endblock %}

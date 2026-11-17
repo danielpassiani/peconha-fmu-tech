@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: peconha-mais
-    runtime: python
-    plan: free
-    buildCommand: pip install -r requirements.txt && python -m app.seed
-    startCommand: gunicorn run:app
