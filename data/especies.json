@@ -1,0 +1,122 @@
+[
+  {
+    "id": "escorpiao-amarelo",
+    "nome": "Escorpião-amarelo",
+    "cientifico": "Tityus serrulatus",
+    "grupo": "escorpiao",
+    "perigo": "alto",
+    "soros": ["escorpionico"],
+    "descricao": "Corpo amarelo-claro com tronco escuro e uma serrilha no dorso da cauda. É o escorpião mais perigoso do Brasil e se reproduz sozinho (partenogênese), por isso se espalha rápido pelas cidades.",
+    "habitat": "Áreas urbanas: entulho, ralos, caixas de esgoto, frestas de muros e terrenos baldios. Ativo à noite.",
+    "sintomas": "Dor intensa e imediata no local, formigamento e suor. Casos graves (principalmente crianças) podem ter vômitos, salivação, agitação, alterações no coração e na respiração.",
+    "prevencao": "Vedar ralos com tela, manter quintais limpos, sacudir roupas e calçados antes de usar e não acumular entulho."
+  },
+  {
+    "id": "escorpiao-marrom",
+    "nome": "Escorpião-marrom",
+    "cientifico": "Tityus bahiensis",
+    "grupo": "escorpiao",
+    "perigo": "medio",
+    "soros": ["escorpionico"],
+    "descricao": "Tronco marrom-escuro e patas com manchas. Muito comum no Sudeste e no Sul, inclusive em áreas urbanas.",
+    "habitat": "Debaixo de pedras, troncos, cupinzeiros e dentro de casas próximas a áreas verdes.",
+    "sintomas": "Dor local intensa, vermelhidão e suor. Pode evoluir com sintomas gerais em crianças e idosos.",
+    "prevencao": "As mesmas do escorpião-amarelo: limpeza, vedação de frestas e atenção a calçados e roupas."
+  },
+  {
+    "id": "jararaca",
+    "nome": "Jararaca",
+    "cientifico": "Bothrops jararaca",
+    "grupo": "serpente",
+    "perigo": "alto",
+    "soros": ["botropico"],
+    "descricao": "Responsável pela maioria dos acidentes com serpentes no Brasil. Cabeça triangular, fosseta loreal (um furinho entre o olho e a narina) e desenhos em forma de \"V\" invertido no corpo.",
+    "habitat": "Matas, plantações, beira de rios e locais com roedores, como paióis e depósitos.",
+    "sintomas": "Dor, inchaço e manchas roxas no local, que podem evoluir para bolhas. Sangramentos na gengiva ou na urina indicam gravidade.",
+    "prevencao": "Usar botas de cano alto e luvas em áreas de mato, não colocar a mão em buracos e manter a área ao redor da casa limpa."
+  },
+  {
+    "id": "cascavel",
+    "nome": "Cascavel",
+    "cientifico": "Crotalus durissus",
+    "grupo": "serpente",
+    "perigo": "alto",
+    "soros": ["crotalico"],
+    "descricao": "Reconhecida pelo chocalho na ponta da cauda. Tem a maior letalidade entre as serpentes brasileiras quando não tratada.",
+    "habitat": "Campos abertos, cerrado, pastos e áreas secas e pedregosas.",
+    "sintomas": "Pouca dor ou inchaço no local. Pálpebras caídas, visão dupla, dor muscular e urina escura (cor de coca-cola).",
+    "prevencao": "Atenção ao som do chocalho, uso de botas e cuidado ao caminhar em pastos e áreas de capim alto."
+  },
+  {
+    "id": "coral-verdadeira",
+    "nome": "Coral-verdadeira",
+    "cientifico": "Micrurus spp.",
+    "grupo": "serpente",
+    "perigo": "alto",
+    "soros": ["elapidico"],
+    "descricao": "Anéis coloridos (vermelho, preto e branco ou amarelo) ao redor de todo o corpo. Acidentes são raros, mas sempre graves. Existem falsas-corais muito parecidas, por isso trate toda coral como verdadeira.",
+    "habitat": "Vive escondida sob folhas, troncos e no solo de matas e jardins.",
+    "sintomas": "Pouca reação no local. Pálpebras caídas, dificuldade para engolir e falar e, nos casos graves, insuficiência respiratória.",
+    "prevencao": "Nunca manusear serpentes coloridas, mesmo que pareçam inofensivas."
+  },
+  {
+    "id": "surucucu",
+    "nome": "Surucucu-pico-de-jaca",
+    "cientifico": "Lachesis muta",
+    "grupo": "serpente",
+    "perigo": "alto",
+    "soros": ["laquetico"],
+    "descricao": "A maior serpente peçonhenta das Américas, podendo passar de 3 metros. Escamas ásperas que lembram a casca da jaca.",
+    "habitat": "Florestas úmidas da Amazônia e remanescentes de Mata Atlântica.",
+    "sintomas": "Dor e inchaço local, sangramentos, além de diarreia, queda de pressão e batimentos lentos.",
+    "prevencao": "Cuidado redobrado em trilhas de mata fechada, com botas e lanterna à noite."
+  },
+  {
+    "id": "aranha-marrom",
+    "nome": "Aranha-marrom",
+    "cientifico": "Loxosceles spp.",
+    "grupo": "aranha",
+    "perigo": "alto",
+    "soros": ["loxoscelico"],
+    "descricao": "Pequena (cerca de 3 cm com as patas), marrom e pouco agressiva. A picada muitas vezes não dói na hora, o que atrasa a procura por atendimento.",
+    "habitat": "Atrás de móveis, quadros, rodapés, roupas guardadas e pilhas de tijolos ou telhas.",
+    "sintomas": "Dor e vermelhidão que aparecem horas depois, com área roxa que pode virar ferida. Urina escura indica gravidade.",
+    "prevencao": "Afastar móveis da parede, limpar atrás de quadros e sacudir roupas e toalhas antes de usar."
+  },
+  {
+    "id": "armadeira",
+    "nome": "Armadeira",
+    "cientifico": "Phoneutria spp.",
+    "grupo": "aranha",
+    "perigo": "medio",
+    "soros": ["foneutrico"],
+    "descricao": "Aranha grande e agressiva que se levanta nas patas traseiras (\"arma o bote\") quando ameaçada.",
+    "habitat": "Bananeiras, folhagens, entulhos e dentro de calçados.",
+    "sintomas": "Dor intensa e imediata que pode irradiar pelo membro, suor e taquicardia. Casos graves são raros e ocorrem mais em crianças.",
+    "prevencao": "Verificar calçados antes de calçar e usar luvas ao mexer em folhagens e entulho."
+  },
+  {
+    "id": "lonomia",
+    "nome": "Taturana (Lonomia)",
+    "cientifico": "Lonomia obliqua",
+    "grupo": "lagarta",
+    "perigo": "alto",
+    "soros": ["lonomico"],
+    "descricao": "Lagarta verde-amarronzada coberta de espinhos ramificados, que costuma ficar em grupos nos troncos de árvores.",
+    "habitat": "Troncos de árvores frutíferas e nativas, principalmente no Sul e no Sudeste.",
+    "sintomas": "Dor e queimação no local. Horas depois podem surgir manchas roxas e sangramentos (gengiva, nariz, urina).",
+    "prevencao": "Olhar antes de encostar em troncos e usar luvas em podas e colheitas."
+  },
+  {
+    "id": "abelha",
+    "nome": "Abelha-africanizada",
+    "cientifico": "Apis mellifera",
+    "grupo": "abelha",
+    "perigo": "medio",
+    "soros": [],
+    "descricao": "Uma única picada costuma causar só reação local, mas ataques de enxame e pessoas alérgicas exigem atendimento de urgência.",
+    "habitat": "Forros de casas, ocos de árvores, postes e caixas de energia.",
+    "sintomas": "Dor, vermelhidão e inchaço. Falta de ar, inchaço no rosto ou garganta e tontura indicam reação alérgica grave.",
+    "prevencao": "Não mexer em colmeias, chamar os bombeiros para remoção e evitar perfumes fortes em áreas com enxames."
+  }
+]

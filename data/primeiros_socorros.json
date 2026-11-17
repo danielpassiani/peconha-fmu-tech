@@ -1,0 +1,84 @@
+{
+  "fonte": "Ministério da Saúde e Instituto Butantan — orientações para acidentes por animais peçonhentos",
+  "geral": {
+    "faca": [
+      "Lave o local da picada com água e sabão.",
+      "Mantenha a pessoa calma, deitada e em repouso, evitando que ela ande ou corra.",
+      "Retire anéis, relógios, pulseiras e calçados apertados antes que o local inche.",
+      "Mantenha a pessoa hidratada, oferecendo água.",
+      "Procure imediatamente a unidade de saúde mais próxima que tenha o soro adequado.",
+      "Se for seguro, fotografe o animal para ajudar a equipe a identificá-lo."
+    ],
+    "nao_faca": [
+      "Não faça torniquete ou garrote.",
+      "Não corte, fure, queime nem esprema o local da picada.",
+      "Não tente chupar ou sugar o veneno.",
+      "Não passe nada no local (álcool, querosene, fumo, folhas, café, pó ou pomadas).",
+      "Não ofereça bebida alcoólica nem remédios caseiros.",
+      "Não tente capturar ou matar o animal."
+    ],
+    "sinais_alarme": [
+      "Vômitos repetidos, suor excessivo ou salivação",
+      "Sonolência, agitação ou confusão",
+      "Falta de ar ou dificuldade para engolir",
+      "Pálpebras caídas ou visão dupla",
+      "Sangramento na gengiva, no nariz ou na urina",
+      "Urina escura (cor de refrigerante de cola)"
+    ]
+  },
+  "grupos": {
+    "escorpiao": {
+      "titulo": "Picada de escorpião",
+      "soros": ["escorpionico"],
+      "extra": [
+        "Uma compressa morna no local ajuda a aliviar a dor.",
+        "Crianças com menos de 10 anos e idosos têm mais risco: leve ao atendimento mesmo que pareça leve."
+      ]
+    },
+    "serpente": {
+      "titulo": "Picada de cobra",
+      "soros": ["botropico", "crotalico", "elapidico", "laquetico"],
+      "extra": [
+        "Mantenha o membro picado elevado e a pessoa sem se movimentar.",
+        "Toda picada de cobra deve ser avaliada em unidade de saúde, mesmo sem dor: o veneno da cascavel e da coral quase não dói."
+      ]
+    },
+    "aranha": {
+      "titulo": "Picada de aranha",
+      "soros": ["loxoscelico", "foneutrico"],
+      "extra": [
+        "Na picada da armadeira, uma compressa morna ajuda na dor.",
+        "A picada da aranha-marrom quase não dói no início: procure atendimento mesmo assim, porque a lesão aparece horas depois."
+      ]
+    },
+    "lagarta": {
+      "titulo": "Contato com lagarta (taturana)",
+      "soros": ["lonomico"],
+      "extra": [
+        "Lave o local com água fria e faça compressas frias para aliviar a queimação.",
+        "Fique atento a manchas roxas ou sangramentos nas horas seguintes: são sinal de envenenamento por Lonomia."
+      ]
+    },
+    "abelha": {
+      "titulo": "Picada de abelha ou vespa",
+      "soros": [],
+      "extra": [
+        "Retire os ferrões raspando a pele com uma lâmina ou cartão. Não use pinça nem aperte, para não injetar mais veneno.",
+        "Muitas picadas (ataque de enxame), falta de ar ou inchaço no rosto exigem atendimento de urgência: ligue 192."
+      ]
+    },
+    "desconhecido": {
+      "titulo": "Não sei qual animal foi",
+      "soros": [],
+      "extra": [
+        "Procure uma unidade de referência com vários tipos de soro, que pode atender qualquer acidente.",
+        "Descreva à equipe médica o local, o horário e como era o animal, se você o viu."
+      ]
+    }
+  },
+  "contatos": [
+    {"nome": "SAMU", "numero": "192", "descricao": "Emergência médica 24h"},
+    {"nome": "Disque-Intoxicação (Anvisa)", "numero": "08007226001", "exibicao": "0800 722 6001", "descricao": "Orientação gratuita sobre envenenamentos, 24h"},
+    {"nome": "Bombeiros", "numero": "193", "descricao": "Remoção de enxames e resgate"}
+  ]
+}
