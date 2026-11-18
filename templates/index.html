@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block titulo %}Início{% endblock %}
+{% block conteudo %}
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-selo">ODS 3 · Saúde e Bem-Estar · Estado de São Paulo</span>
+      <h1>Foi picado? <em>Cada minuto conta.</em></h1>
+      <p>O PEÇONHA+ mostra o que fazer agora e onde está a unidade de saúde mais próxima com o soro certo para o seu caso.</p>
+      <div class="hero-acoes">
+        <a href="/emergencia" class="btn btn-alerta btn-lg">🚨 Fui picado, e agora?</a>
+        <a href="/mapa" class="btn btn-contorno btn-lg">Ver mapa de soros</a>
+      </div>
+    </div>
+    <img class="hero-simbolo" src="{{ url_for('static', filename='img/simbolo.png') }}" alt="Símbolo do PEÇONHA+">
+  </div>
+</section>
+
+<div class="faixa-alerta">
+  <div class="container">
+    <span>⚠️</span>
+    <span><strong>Novembro é o mês com mais acidentes com escorpião no Brasil.</strong> Em 2023 foram 20.656 casos só neste mês (Sinan/Ministério da Saúde).</span>
+  </div>
+</div>
+
+<section class="secao">
+  <div class="container">
+    <div class="secao-titulo">
+      <h2>O problema em números</h2>
+      <p>Os acidentes são frequentes, mas a informação sobre o que fazer e onde há soro está espalhada e é difícil de achar na hora da emergência.</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="kpi"><div class="kpi-valor">48.655</div><div class="kpi-rotulo">acidentes com escorpião no estado de SP em 2023</div></div>
+      <div class="kpi"><div class="kpi-valor">1º</div><div class="kpi-rotulo">SP é o estado com mais casos de escorpião do Brasil</div></div>
+      <div class="kpi"><div class="kpi-valor laranja">6,7×</div><div class="kpi-rotulo">mais letal em crianças de 0 a 9 anos do que em adultos de 40 a 49</div></div>
+      <div class="kpi"><div class="kpi-valor">{{ total_unidades }}</div><div class="kpi-rotulo">unidades com soro mapeadas em SP</div></div>
+    </div>
+    <p class="fonte">Fonte: Boletim Epidemiológico vol. 56 nº 5, Ministério da Saúde (Sinan 2023) e lista de hospitais de referência do Ministério da Saúde.</p>
+  </div>
+</section>
+
+<section class="secao sem-topo">
+  <div class="container">
+    <div class="grid grid-3">
+      <a class="card card-link" href="/emergencia">
+        <div class="card-icone">🩹</div>
+        <h3>Primeiros socorros</h3>
+        <p class="muted">Escolha o animal e veja o que fazer, o que não fazer e onde buscar atendimento.</p>
+      </a>
+      <a class="card card-link" href="/mapa">
+        <div class="card-icone">📍</div>
+        <h3>Mapa de soros</h3>
+        <p class="muted">Unidades de referência do Ministério da Saúde em SP, com telefone e endereço.</p>
+      </a>
+      <a class="card card-link" href="/especies">
+        <div class="card-icone">🔎</div>
+        <h3>Catálogo de espécies</h3>
+        <p class="muted">Como reconhecer os animais perigosos e como evitar acidentes.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="secao sem-topo">
+  <div class="container">
+    <div class="card card-verde">
+      <h2>Prevenção salva vidas</h2>
+      <div class="grid grid-2">
+        <ul class="lista-simples">
+          <li>Sacuda roupas, toalhas e calçados antes de usar.</li>
+          <li>Coloque telas em ralos e vede frestas de portas e rodapés.</li>
+          <li>Não acumule entulho, folhas e lixo no quintal.</li>
+        </ul>
+        <ul class="lista-simples">
+          <li>Use luvas e botas em jardinagem, obras e áreas de mato.</li>
+          <li>Afaste camas e berços da parede.</li>
+          <li>Nunca coloque a mão em buracos, tocas ou frestas.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

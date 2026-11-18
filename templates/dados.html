@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block titulo %}Dados{% endblock %}
+{% block conteudo %}
+<section class="secao">
+  <div class="container">
+    <div class="secao-titulo">
+      <h1>Painel de dados</h1>
+      <p>Números oficiais do Sinan (Ministério da Saúde) sobre acidentes com escorpião, o animal que mais causa acidentes no Brasil, com destaque para o estado de São Paulo.</p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="kpi"><div class="kpi-valor">{{ "{:,}".format(sp.casos).replace(",", ".") }}</div><div class="kpi-rotulo">acidentes com escorpião em SP (2023)</div></div>
+      <div class="kpi"><div class="kpi-valor">{{ sp.incidencia | string | replace(".", ",") }}</div><div class="kpi-rotulo">casos por 100 mil habitantes em SP</div></div>
+      <div class="kpi"><div class="kpi-valor laranja">{{ "{:,}".format(e.casos_mes_pico).replace(",", ".") }}</div><div class="kpi-rotulo">casos no Brasil em novembro, o mês de pico</div></div>
+      <div class="kpi"><div class="kpi-valor">{{ total_unidades }}</div><div class="kpi-rotulo">unidades com soro em {{ total_cidades }} cidades de SP</div></div>
+    </div>
+
+    <div class="grid grid-2 graficos">
+      <div class="card">
+        <h3>Estados com mais casos de escorpião (2023)</h3>
+        <p class="muted">São Paulo lidera o país.</p>
+        {% for uf in estados %}
+        <div class="barra-linha">
+          <span class="barra-rotulo">{{ uf.uf }}</span>
+          <div class="barra-trilho"><div class="barra {{ 'barra-laranja' if uf.uf == 'SP' }}" style="width: {{ (uf.casos / maior_estado * 100) | round(1) }}%"></div></div>
+          <span class="barra-valor">{{ "{:,}".format(uf.casos).replace(",", ".") }}</span>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="card">
+        <h3>Letalidade por faixa etária (Brasil)</h3>
+        <p class="muted">Crianças de 0 a 9 anos: 11% dos casos, mas 34% das mortes.</p>
+        {% for f in e.faixa_etaria %}
+        <div class="barra-linha">
+          <span class="barra-rotulo">{{ f.faixa }}</span>
+          <div class="barra-trilho"><div class="barra {{ 'barra-laranja' if f.faixa == '0–9' }}" style="width: {{ (f.letalidade / maior_letalidade * 100) | round(1) }}%"></div></div>
+          <span class="barra-valor">{{ f.letalidade | string | replace(".", ",") }}%</span>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="card">
+        <h3>Onde acontece a picada (Brasil)</h3>
+        <p class="muted">Mãos e pés somam 71%: sacudir calçados e usar luvas previne a maioria.</p>
+        {% for local, valor in e.local_picada.items() if local != "Ignorado" %}
+        <div class="barra-linha">
+          <span class="barra-rotulo barra-rotulo-largo">{{ local }}</span>
+          <div class="barra-trilho"><div class="barra {{ 'barra-cinza' if local not in ['Mãos', 'Pés'] }}" style="width: {{ (valor / 40 * 100) | round(1) }}%"></div></div>
+          <span class="barra-valor">{{ valor | string | replace(".", ",") }}%</span>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="card">
+        <h3>Rede de soros mapeada em SP</h3>
+        <p class="muted">Quantas unidades do PEÇONHA+ têm cada soro. Soros raros estão em poucos pontos.</p>
+        {% for s in por_soro %}
+        <div class="barra-linha">
+          <span class="barra-rotulo barra-rotulo-largo">{{ s.nome }}</span>
+          <div class="barra-trilho"><div class="barra" style="width: {{ (s.total / maior_soro * 100) | round(1) }}%"></div></div>
+          <span class="barra-valor">{{ s.total }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <p class="fonte">Fonte: <a href="{{ fonte_url }}" target="_blank">{{ fonte }}</a>. Rede de soros: lista de hospitais de referência do Ministério da Saúde (SP).</p>
+  </div>
+</section>
+{% endblock %}

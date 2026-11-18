@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block titulo %}Espécies{% endblock %}
+{% block conteudo %}
+<section class="secao">
+  <div class="container">
+    <div class="secao-titulo">
+      <h1>Catálogo de espécies</h1>
+      <p>Os animais peçonhentos que mais causam acidentes, como reconhecê-los e como se proteger.</p>
+    </div>
+    <div class="grid grid-3">
+      {% for e in especies %}
+      <a class="card card-link card-especie" href="/especies/{{ e.id }}">
+        <span class="emoji">{{ grupos[e.grupo].emoji }}</span>
+        <h3>{{ e.nome }}</h3>
+        <p class="cientifico">{{ e.cientifico }}</p>
+        <div class="badges">
+          <span class="badge badge-perigo-{{ e.perigo }}">Perigo {{ 'alto' if e.perigo == 'alto' else 'médio' }}</span>
+          {% if e.soro_codigo %}
+          <span class="badge">Soro {{ soros[e.soro_codigo].nome }}</span>
+          {% else %}
+          <span class="badge">Sem soro específico</span>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

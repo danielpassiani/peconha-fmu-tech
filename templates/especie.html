@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block titulo %}{{ e.nome }}{% endblock %}
+{% block conteudo %}
+<section class="secao">
+  <div class="container estreito">
+    <a href="/especies" class="voltar">← Voltar ao catálogo</a>
+    <div class="card detalhe-especie">
+      <div class="detalhe-topo">
+        <h1>{{ grupos[e.grupo].emoji }} {{ e.nome }}</h1>
+        <p class="cientifico">{{ e.cientifico }}</p>
+      </div>
+      <div class="badges">
+        <span class="badge badge-perigo-{{ e.perigo }}">Perigo {{ 'alto' if e.perigo == 'alto' else 'médio' }}</span>
+        {% if e.soro_codigo %}
+        <span class="badge badge-destaque">Soro {{ soros[e.soro_codigo].nome }}</span>
+        {% else %}
+        <span class="badge">Não há soro de uso rotineiro</span>
+        {% endif %}
+      </div>
+
+      <h3>Como reconhecer</h3>
+      <p>{{ e.descricao }}</p>
+      <h3>Onde vive</h3>
+      <p>{{ e.habitat }}</p>
+      <h3>Sintomas da picada</h3>
+      <p>{{ e.sintomas }}</p>
+      <h3>Como prevenir</h3>
+      <p>{{ e.prevencao }}</p>
+
+      <div class="card-unidade-acoes">
+        <a class="btn btn-alerta" href="/emergencia/{{ e.grupo }}">Fui picado por este animal</a>
+        {% if e.soro_codigo %}
+        <a class="btn btn-contorno" href="/mapa?soro={{ e.soro_codigo }}">Onde tem soro {{ soros[e.soro_codigo].nome }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
