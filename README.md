@@ -168,7 +168,8 @@ A distância entre a pessoa e cada unidade é calculada em Python com a **fórmu
 * O mapa tem **109 unidades em 90 cidades de SP**, retiradas da lista oficial do Ministério da Saúde. A próxima etapa é incluir a lista completa do estado.
 * A posição das unidades no mapa é **aproximada** (centro da cidade, ou do bairro na capital).
 * A disponibilidade de soro pode mudar: o app orienta ligar antes para a unidade.
-
+* Os dados das unidades foram conferidos com o PDF oficial do Ministério da Saúde
+* 
 ## 🎨 7. Identidade Visual
 
 ![Guia de Identidade Visual - PEÇONHA+](docs/identidade-visual/Identidade%20visual.png)
