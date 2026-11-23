@@ -183,7 +183,7 @@ A distância entre a pessoa e cada unidade é calculada em Python com a **fórmu
 
 ## ⚡ 8. Pitch
 
-"São Paulo é o estado com mais acidentes com escorpião do Brasil: quase 50 mil por ano. Nos primeiros minutos, ninguém sabe o que fazer nem onde há soro. O **PEÇONHA+** resolve isso em poucos toques: diga qual animal foi, veja os primeiros socorros oficiais e encontre a unidade mais próxima com o soro certo. Tudo com dados públicos do Ministério da Saúde, em um Web App que abre em qualquer celular, alinhado ao ODS 3 de promover o bem-estar e salvar vidas."
+"São Paulo é o estado que registra o maior número de acidentes com escorpiões no Brasil: aproximadamente 50 mil por ano. Nos primeiros minutos, muitas pessoas não sabem como agir ou onde encontrar o soro adequado. O PEÇONHA+ facilita esse processo em poucos cliques: informe qual animal causou o acidente, consulte as orientações oficiais de primeiros socorros e localize a unidade de saúde mais próxima que possui o soro indicado. Tudo isso utilizando dados públicos do Ministério da Saúde, por meio de um Web App acessível em qualquer celular, contribuindo com o ODS 3, que busca promover a saúde, o bem-estar e salvar vidas."
 
 ## 🔜 Próximos passos
 
