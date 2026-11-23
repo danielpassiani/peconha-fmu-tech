@@ -26,16 +26,16 @@ Nesta versão, o PEÇONHA+ cobre **apenas o estado de São Paulo**, onde estão 
 
 O **PEÇONHA+** reúne em um Web App (celular e computador, sem instalar nada) o que a pessoa precisa nos primeiros minutos após um acidente:
 
-| Funcionalidade | Status no Checkpoint 2 |
+| Funcionalidade | Status |
 |---|---|
 | **Primeiros socorros por animal** (o que fazer, o que não fazer, sinais de alarme) | ✅ Implementado |
 | **Unidade mais próxima com o soro certo** (localização do celular ou cidade) | ✅ Implementado |
 | **Mapa de unidades com soro antiveneno** em SP, com filtro por soro e cidade | ✅ Implementado |
 | **Catálogo de espécies** | ✅ Implementado |
 | **Painel de dados** do Sinan | ✅ Implementado |
-| **Registro comunitário de avistamentos** | 🔜 Próxima etapa |
+| **Registro comunitário de avistamentos** | ✅ Implementado |
 
-## 📱 3. Protótipo Funcional (Checkpoint 2)
+## 📱 3. Projeto Funcionando
 
 ### Fluxo principal: "Fui picado, e agora?"
 
@@ -46,6 +46,12 @@ O **PEÇONHA+** reúne em um Web App (celular e computador, sem instalar nada) o
 | Início | Escolha do animal | Primeiros socorros | Atendimento |
 |---|---|---|---|
 | ![Início](docs/prints/01-inicio-mobile.jpg) | ![Animal](docs/prints/02-escolha-animal.jpg) | ![Primeiros socorros](docs/prints/03-primeiros-socorros.jpg) | ![Atendimento](docs/prints/04-atendimento.jpg) |
+
+### Registro comunitário de avistamentos
+
+Qualquer pessoa pode registrar que viu um animal peçonhento, informando o animal, a cidade, a data e uma observação. Os registros ficam salvos no banco de dados e aparecem na lista de últimos avistamentos, ajudando a alertar quem mora na mesma região.
+
+![Avistamentos](docs/prints/10-avistamentos.jpg)
 
 **Mapa de soros**
 ![Mapa](docs/prints/07-mapa.jpg)
@@ -129,6 +135,8 @@ unidade (id, nome, endereco, telefone, cnes, codigo_ibge, latitude, longitude)
 soro (codigo, nome, animal)
     │ 1:N
 especie (id, nome, cientifico, grupo, perigo, soro_codigo, descricao, habitat, sintomas, prevencao)
+
+municipio 1:N avistamento (id, grupo, codigo_ibge, data, bairro, observacao, criado_em)
 ```
 
 **Rotas**
@@ -140,6 +148,7 @@ especie (id, nome, cientifico, grupo, perigo, soro_codigo, descricao, habitat, s
 | `/emergencia/<animal>` | Primeiros socorros e busca de atendimento |
 | `/mapa?soro=&cidade=` | Mapa e lista de unidades com filtros |
 | `/especies` e `/especies/<id>` | Catálogo e detalhe das espécies |
+| `/avistamentos` | Formulário e lista de avistamentos da comunidade |
 | `/dados` | Painel de dados |
 | `/api/unidades/proximas?lat=&lon=&grupo=` | Retorna em JSON as 5 unidades mais próximas com o soro do animal (usada pelo JavaScript) |
 
@@ -177,11 +186,21 @@ A distância entre a pessoa e cada unidade é calculada em Python com a **fórmu
 
 ## 🔜 Próximos passos
 
-* Registro comunitário de avistamentos.
+* Mapa com os avistamentos registrados pela comunidade.
 * Lista completa de unidades do estado de SP.
 * Posição exata das unidades no mapa (a partir do endereço).
 
-## 👥 9. Integrantes do Grupo
+## 👥 9. Integrantes do Grupo e Contribuições
+
+| Integrante | Contribuição |
+|---|---|
+| Daniel dos Santos Bonilho Passiani | Desenvolvimento do sistema (Flask, banco de dados e páginas) e identidade visual |
+| Augusto Andrade Silva | Levantamento e conferência das bases de dados públicas |
+| Letícia Souza Pessoa | Conteúdo e revisão das orientações de primeiros socorros |
+| Pedro de Siqueira Torres | Pitch e apresentação do projeto |
+| Eduardo Prado da Silva | Documentação e próximos passos |
+
+**Perfis no GitHub:**
 
 * Eduardo Prado da Silva ([@PRADOZZZ](https://github.com/PRADOZZZ))
 * Daniel dos Santos Bonilho Passiani ([@danielpassiani](https://github.com/danielpassiani))
@@ -191,4 +210,4 @@ A distância entre a pessoa e cada unidade é calculada em Python com a **fórmu
 
 > ⚠️ O PEÇONHA+ é um projeto acadêmico e **não substitui atendimento médico**. Em emergência, ligue **192 (SAMU)**.
 
-*Checkpoint 2 — FMU Tech Inovação 2026.2 · Análise e Desenvolvimento de Sistemas, 2º semestre.*
+*Entrega final — FMU Tech Inovação 2026.2 · Análise e Desenvolvimento de Sistemas, 2º semestre.*
