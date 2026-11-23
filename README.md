@@ -21,6 +21,7 @@ Nesta versão, o PEÇONHA+ cobre **apenas o estado de São Paulo**, onde estão 
 * Redução de agravos e mortes evitáveis causados por animais peçonhentos.
 * Divulgação acessível dos protocolos oficiais de primeiros socorros.
 * Acesso mais rápido às unidades de saúde que têm o soro antiveneno correto.
+* Prevenção de acidentes com dicas de cuidado e com o registro comunitário de avistamentos.
 
 ## 💡 2. Proposta de Solução Tecnológica
 
@@ -169,7 +170,6 @@ A distância entre a pessoa e cada unidade é calculada em Python com a **fórmu
 * A posição das unidades no mapa é **aproximada** (centro da cidade, ou do bairro na capital).
 * A disponibilidade de soro pode mudar: o app orienta ligar antes para a unidade.
 * Os dados das unidades foram conferidos com o PDF oficial do Ministério da Saúde
-* 
 ## 🎨 7. Identidade Visual
 
 ![Guia de Identidade Visual - PEÇONHA+](docs/identidade-visual/Identidade%20visual.png)
