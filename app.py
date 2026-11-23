@@ -7,8 +7,9 @@ Para rodar:  python app.py   e abra http://localhost:5000
 import json
 import math
 import os
+from datetime import date
 
-from flask import Flask, abort, jsonify, render_template, request
+from flask import Flask, abort, jsonify, redirect, render_template, request
 
 from database import ARQUIVO_BANCO, PASTA, conectar, criar_banco
 
@@ -177,6 +178,63 @@ def dados():
         total_unidades=total_unidades,
         total_cidades=total_cidades,
         maior_letalidade=max(f["letalidade"] for f in escorpiao["faixa_etaria"]),
+    )
+
+
+@app.route("/avistamentos", methods=["GET", "POST"])
+def avistamentos():
+    conexao = conectar()
+    erro = None
+
+    # Formulário enviado: valida e salva no banco
+    if request.method == "POST":
+        grupo = request.form.get("grupo", "")
+        codigo_ibge = request.form.get("cidade", "")
+        data = request.form.get("data", "")
+        bairro = request.form.get("bairro", "").strip()
+        observacao = request.form.get("observacao", "").strip()
+
+        cidade_existe = conexao.execute(
+            "SELECT 1 FROM municipio WHERE codigo_ibge = ?", (codigo_ibge,)
+        ).fetchone()
+
+        if grupo not in GRUPOS or grupo == "desconhecido":
+            erro = "Escolha o animal que você viu."
+        elif not cidade_existe:
+            erro = "Escolha a cidade."
+        elif not data or data > date.today().isoformat():
+            erro = "Informe uma data válida (não pode ser no futuro)."
+        else:
+            conexao.execute(
+                "INSERT INTO avistamento (grupo, codigo_ibge, data, bairro, observacao) VALUES (?, ?, ?, ?, ?)",
+                (grupo, codigo_ibge, data, bairro[:80], observacao[:300]),
+            )
+            conexao.commit()
+            conexao.close()
+            return redirect("/avistamentos?ok=1")
+
+    # Lista dos últimos avistamentos
+    lista = conexao.execute("""
+        SELECT a.grupo, a.data, a.bairro, a.observacao, m.nome AS cidade
+        FROM avistamento a
+        JOIN municipio m ON m.codigo_ibge = a.codigo_ibge
+        ORDER BY a.data DESC, a.id DESC
+        LIMIT 20
+    """).fetchall()
+    total = conexao.execute("SELECT COUNT(*) FROM avistamento").fetchone()[0]
+    municipios = conexao.execute("SELECT codigo_ibge, nome FROM municipio ORDER BY nome").fetchall()
+    conexao.close()
+
+    animais = {codigo: g for codigo, g in GRUPOS.items() if codigo != "desconhecido"}
+    return render_template(
+        "avistamentos.html",
+        lista=lista,
+        total=total,
+        municipios=municipios,
+        animais=animais,
+        hoje=date.today().isoformat(),
+        erro=erro,
+        sucesso=request.args.get("ok"),
     )
 
 

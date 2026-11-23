@@ -313,3 +313,13 @@ p { margin: 0 0 1em; }
 .detalhe-especie .card-unidade-acoes { margin-top: 20px; }
 .aviso { margin-top: 16px; }
 .legenda { margin-top: 10px; }
+
+/* ---------- Avistamentos ---------- */
+.faixa-avistamento { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; border-left: 6px solid var(--laranja); }
+.faixa-avistamento h2 { margin-bottom: 4px; }
+.faixa-avistamento p { margin: 0; }
+.form-avistamento { display: grid; gap: 14px; align-content: start; }
+.form-avistamento h2 { margin: 0; }
+.campo textarea { font: inherit; padding: 12px 14px; border: 1px solid #CBD5E1; border-radius: 10px; width: 100%; resize: vertical; }
+.sucesso { background: var(--verde-claro); color: var(--verde-escuro); padding: 12px 14px; border-radius: 10px; margin: 0; font-weight: 600; }
+.card-unidade p { margin: 0; }

@@ -1,5 +1,6 @@
 -- PEÇONHA+ - Banco de dados (SQLite)
 
+DROP TABLE IF EXISTS avistamento;
 DROP TABLE IF EXISTS unidade_soro;
 DROP TABLE IF EXISTS unidade;
 DROP TABLE IF EXISTS especie;
@@ -56,4 +57,16 @@ CREATE TABLE especie (
     sintomas    TEXT,
     prevencao   TEXT,
     FOREIGN KEY (soro_codigo) REFERENCES soro (codigo)
+);
+
+-- Avistamentos registrados pela comunidade
+CREATE TABLE avistamento (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    grupo       TEXT NOT NULL,      -- escorpiao, serpente, aranha, lagarta, abelha
+    codigo_ibge INTEGER NOT NULL,   -- cidade onde o animal foi visto
+    data        TEXT NOT NULL,      -- data do avistamento (AAAA-MM-DD)
+    bairro      TEXT,
+    observacao  TEXT,
+    criado_em   TEXT DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (codigo_ibge) REFERENCES municipio (codigo_ibge)
 );

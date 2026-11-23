@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block titulo %}Avistamentos{% endblock %}
+{% block conteudo %}
+<section class="secao">
+  <div class="container">
+    <div class="secao-titulo">
+      <h1>Avistamentos da comunidade</h1>
+      <p>Viu um escorpião, uma cobra ou outro animal peçonhento? Registre aqui para alertar quem mora perto.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <!-- Formulário -->
+      <form class="card form-avistamento" method="post" action="/avistamentos">
+        <h2>Registrar avistamento</h2>
+
+        {% if sucesso %}<p class="sucesso">✅ Avistamento registrado. Obrigado por ajudar!</p>{% endif %}
+        {% if erro %}<p class="erro">{{ erro }}</p>{% endif %}
+
+        <div class="campo">
+          <label for="grupo">Animal</label>
+          <select id="grupo" name="grupo" required>
+            <option value="">Selecione...</option>
+            {% for codigo, a in animais.items() %}
+            <option value="{{ codigo }}">{{ a.emoji }} {{ a.nome }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="cidade">Cidade</label>
+          <select id="cidade" name="cidade" required>
+            <option value="">Selecione...</option>
+            {% for m in municipios %}
+            <option value="{{ m.codigo_ibge }}">{{ m.nome }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="data">Data</label>
+          <input type="date" id="data" name="data" max="{{ hoje }}" value="{{ hoje }}" required>
+        </div>
+
+        <div class="campo">
+          <label for="bairro">Bairro ou local (opcional)</label>
+          <input id="bairro" name="bairro" maxlength="80" placeholder="Ex.: Liberdade, praça perto da escola">
+        </div>
+
+        <div class="campo">
+          <label for="observacao">Observação (opcional)</label>
+          <textarea id="observacao" name="observacao" maxlength="300" rows="3" placeholder="Ex.: estava no ralo do banheiro"></textarea>
+        </div>
+
+        <button class="btn btn-verde" type="submit">Enviar avistamento</button>
+        <p class="fonte">Não informe nome, telefone ou endereço completo.</p>
+      </form>
+
+      <!-- Lista -->
+      <div>
+        <h2>Últimos avistamentos</h2>
+        <p class="muted">{{ total }} avistamento(s) registrado(s) no total.</p>
+        <div class="lista-unidades">
+          {% for a in lista %}
+          <article class="card-unidade">
+            <div class="card-unidade-topo">
+              <h3>{{ animais[a.grupo].emoji }} {{ animais[a.grupo].nome }}</h3>
+              <span class="distancia">{{ a.data[8:10] }}/{{ a.data[5:7] }}/{{ a.data[0:4] }}</span>
+            </div>
+            <p class="muted">📍 {{ a.cidade }}{% if a.bairro %} · {{ a.bairro }}{% endif %}</p>
+            {% if a.observacao %}<p>{{ a.observacao }}</p>{% endif %}
+          </article>
+          {% else %}
+          <p class="muted">Nenhum avistamento registrado ainda. Seja o primeiro!</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
