@@ -63,7 +63,7 @@ Qualquer pessoa pode registrar que viu um animal peçonhento, informando o anima
 **Painel de dados (Sinan 2023)**
 ![Painel de dados](docs/prints/08-painel-dados.jpg)
 
-🎥 **Vídeo de demonstração (até 3 min):** _link a adicionar_
+🎥 **Vídeo de demonstração (até 3 min):** [Assista no YouTube](https://youtu.be/HioajYKRvzo)
 
 ## ▶️ 4. Como executar
 
